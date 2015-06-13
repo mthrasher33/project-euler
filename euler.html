@@ -1,0 +1,67 @@
+<p>Click the button to reveal the answer for <a href="https://projecteuler.net/problem=1">euler problem 1</a></p>
+
+<button onclick="threeFive(1000)">Click me</button>
+
+<p id="number1"></p>
+
+<p>Click the button to reveal the answer for <a href="https://projecteuler.net/problem=2">euler problem 2</a></p>
+
+<button onclick="fibonacci(4000000)">Click me</button>
+
+<p id="number2"></p>
+
+<p>Click the button to reveal the answer for <a href="https://projecteuler.net/problem=3">euler problem 3</a></p>
+
+<button onclick="largestPrimeFactor(600851475143)">Click me</button>
+
+<p id="number3"></p>
+
+
+<script>
+function threeFive(){
+var sum = 0;
+var x = 1000;
+
+for (i=1; i<x; i++){
+    if (i%3==0 || i%5==0){
+        sum+=i;
+    }
+}
+document.getElementById("number1").innerHTML = sum;
+}
+
+function fibonacci (){
+var i;
+var fib = []; 
+sum=0;
+
+fib[0] = 0;
+fib[1] = 1;
+for(i=2; i<=10000; i++)
+{
+    if (fib[i-2]+fib[i-1] <4000000){
+    fib[i] = fib[i-2] + fib[i-1];
+    }
+    if (fib[i]%2===0){
+        sum+=fib[i];
+    }
+    
+}
+document.getElementById("number2").innerHTML = sum;
+}
+
+
+function largestPrimeFactor(number) {
+var i = 2;
+while (i <= number) {
+    if (number % i == 0) {
+        number /= i;    
+    } else {
+        i++;
+    }
+}
+document.getElementById("number3").innerHTML = i;
+}
+
+
+</script>
